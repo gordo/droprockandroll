@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width;" />
+		<meta name="author" content="Gordon Mei" />
+		<title>Drop (Rock) and Roll - Studio Gordon Mei - Labs</title>
+		<style type="text/css">
+			* {margin:0; padding:0;}
+
+			body {font-size:100%; text-align:center; background-color:#e2ebef; margin:5em auto 0 auto; width:760px;}
+
+			input {font-family:Georgia,Times,"Times New Roman",serif; font-size:14pt; padding:0.3em;}
+
+			input[type="submit"], input[type="button"] {
+				font-size:18px;
+				padding:7px 14px;
+				border:1px solid #cfd6d9;
+				/* border-radius: 1.3em; */
+				-moz-border-radius:20px; /* Gecko enhancement until border-radius CSS3 support (intentional non-W3C) */
+				-webkit-border-radius:20px; /* Webkit enhancement until border-radius CSS3 support (intentional non-W3C) */
+				background-color:#fff;				
+				background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e3e7ef)) !important;
+				background: -moz-linear-gradient(top, #fff, #fff, #e3e7ef) !important;
+				text-shadow: #fff 0 1px 0;
+			}
+
+			input[type="submit"]:hover, input[type="button"]:hover {
+				cursor:pointer;
+				background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff), color-stop(0.5, #e3e7ef)) !important;
+				background: -moz-linear-gradient(top, #fff, #e3e7ef, #fff) !important;
+			}
+			
+			#selection {margin:0 auto 1em auto;}
+			#selection a {color:#555; font-size:16pt; line-height:2em;}
+			#selection a:hover {color:#acf; text-decoration:none;}
+			
+			#search-input-container-outer {border:1px solid #ccc; background-color:#fff; width:300px; float:left; margin-right:0.5em;}			
+			#search-input-container-inner {width:auto; height:36px; position:relative; color:#aaa; font-size:14pt;}
+			#search-input-wrapper {position:absolute; left:0; top:6px; white-space:nowrap; width:340px;}
+
+			#formfactor {position:relative; width:510px; margin:0 auto; height:38px; text-align:center;}
+			#searchqueryinput {padding:0; border:0; margin-left:-55px;}
+			#searchqueryinput:focus {outline:0;}
+			#searchbutton {float:left;}
+						
+			#searchselectwrapper {position:absolute; top:-6px; left:0; visibility:hidden;}
+			
+			#search-icon {display:inline;}
+			#search-icon:hover #searchselectwrapper {visibility:visible;}
+			#search-icon:hover #searchplaceholder {color:#333;}
+			
+			#searchselectwrapper input[type="radio"] {display:none;}
+			#searchselectwrapper label {border:2px solid #eee; width:16px; height:16px; padding:8px; display:block; background-color:#fff; text-indent:28px; color:#fff; font-size:1px; letter-spacing:-1px; white-space:nowrap;}
+			#searchselectwrapper label:hover {cursor:pointer; background-color:#eee; border-color:#333;}
+
+			#searchplaceholder {float:left; width:16px; height:16px; border:2px solid #eee; padding:8px; margin-top:-6px; white-space:nowrap; background:url(favicongoogle.png) center center no-repeat; font-size:1px; letter-spacing:-1px; text-indent:-9999px;}
+
+			#labelgoogle {background:url(favicongoogle.png) center center no-repeat;}
+			#labelyahoo {background:url(faviconyahoo.png) center center no-repeat;}
+			#labelflickr {background:url(faviconflickr.png) center center no-repeat;}
+			#labelwikipedia {background:url(faviconwikipedia.png) center center no-repeat;}
+			#labelimdb {background:url(faviconimdb.png) center center no-repeat;}
+
+			#sosumi {margin:0 auto; padding-top:1em; font-size:10pt; clear:both;}
+			#sosumi a {color:#333;}
+			#sosumi a:hover {text-decoration:none; color:#abc;}
+			#sosumi p {color:#999;}
+			
+			.hidden {display:none;}
+		</style>
+	</head>
+	<body>
+			
+		<!--<form id="formfactor">-->
+		<div id="formfactor">
+
+			<div id="search-input-container-outer">
+				<div id="search-input-container-inner">
+					<div id="search-input-wrapper">
+						<div id="search-icon">
+							<div id="searchselectwrapper">
+								<input type="radio" name="searchselect" value="google" id="google" class="hidden" />
+								<label for="google" id="labelgoogle"><span class="hidden">Google</span></label>
+								
+								<input type="radio" name="searchselect" value="yahoo" id="yahoo" class="hidden" />
+								<label for="yahoo" id="labelyahoo"><span class="hidden">Yahoo!</span></label>
+								
+								<input type="radio" name="searchselect" value="flickr" id="flickr" class="hidden" />
+								<label for="flickr" id="labelflickr"><span class="hidden">Flickr</span></label>
+								
+								<input type="radio" name="searchselect" value="wikipedia" id="wikipedia" class="hidden" />
+								<label for="wikipedia" id="labelwikipedia"><span class="hidden">Wikipedia</span></label>
+								
+								<input type="radio" name="searchselect" value="imdb" id="imdb" class="hidden" />
+								<label for="imdb" id="labelimdb"><span class="hidden">IMDB</span></label>
+							</div>
+						
+							<div id="searchplaceholder">Search:&nbsp;</div>
+						</div>
+						
+						<input id="searchqueryinput" type="text" />
+					</div>
+				</div>
+			</div>			
+
+
+			<input id="searchbutton" type="button" value="Search Google" />
+						
+		</div>
+		<!--</form>-->
+		
+		<div id="sosumi">
+			2010. <a href="http://www.monstercyb.org/gordon">Monstercyb.org</a>. A part of the <a href="http://www.ocf.berkeley.edu/~gordeon">GordeonBleu</a> network. Bears. Beets. Battlestar Galactica.
+			<p>Special thanks to Matt Claypotch and Alan Liang.</p>
+		</div>
+		
+
+		<script type="text/javascript">
+		
+			/* Button! */
+					
+			var searchbuttonelement = document.getElementById("searchbutton");
+			if (searchbuttonelement.addEventListener) {
+				searchbuttonelement.addEventListener("click", makeUrlAndSearch, false);
+			}
+			else if (searchbuttonelement.attachEvent) {
+				searchbuttonelement.attachEvent("onclick", makeUrlAndSearch);
+			}					
+
+			/* Set URL prefix */			
+		
+			var icongoogle = document.getElementById("labelgoogle");
+			var iconyahoo = document.getElementById("labelyahoo");
+			var iconflickr= document.getElementById("labelflickr");
+			var iconwikipedia = document.getElementById("labelwikipedia");
+			var iconimdb = document.getElementById("labelimdb");
+			
+			if (icongoogle.addEventListener) {
+				icongoogle.addEventListener("click", function(){swapEngine("google");}, false);
+				iconyahoo.addEventListener("click", function(){swapEngine("yahoo");}, false);
+				iconflickr.addEventListener("click", function(){swapEngine("flickr");}, false);
+				iconwikipedia.addEventListener("click", function(){swapEngine("wikipedia");}, false);
+				iconimdb.addEventListener("click", function(){swapEngine("imdb");}, false);
+			}
+			else if (icongoogle.attachEvent) {
+				icongoogle.attachEvent("onclick", function(){swapEngine("google");});
+				iconyahoo.attachEvent("onclick", function(){swapEngine("yahoo");});
+				iconflickr.attachEvent("onclick", function(){swapEngine("flickr");});
+				iconwikipedia.attachEvent("onclick", function(){swapEngine("wikipedia");});
+				iconimdb.attachEvent("onclick", function(){swapEngine("imdb");});
+			}
+			/* event listener in IE does not grab id's of the hidden radio buttons, so must rely on label id's */
+			
+			var searchUrlPrefix = "http://www.google.com/search?q=";
+			
+			var searchPlaceholderElement = document.getElementById("searchplaceholder");
+			
+			function swapEngine(engine) {
+				if(engine == "google") {
+					searchUrlPrefix = "http://www.google.com/search?q=";
+					searchbuttonelement.value = "Search Google";
+					searchPlaceholderElement.style.backgroundImage = "url(favicongoogle.png)";
+				}
+				else if(engine == "yahoo") {
+					searchUrlPrefix = "http://search.yahoo.com/search?p=";
+					searchbuttonelement.value = "Search Yahoo!";
+					searchPlaceholderElement.style.backgroundImage = "url(faviconyahoo.png)";
+				}
+				else if(engine == "flickr") {
+					searchUrlPrefix = "http://www.flickr.com/search/?q=";
+					searchbuttonelement.value = "Search Flickr";
+					searchPlaceholderElement.style.backgroundImage = "url(faviconflickr.png)";					
+				}
+				else if(engine == "wikipedia") {
+					searchUrlPrefix = "http://en.wikipedia.org/wiki/Special:Search?search=";
+					searchbuttonelement.value = "Search Wikipedia";
+					searchPlaceholderElement.style.backgroundImage = "url(faviconwikipedia.png)";					
+				}
+				else if(engine == "imdb") {
+					searchUrlPrefix = "http://www.imdb.com/find?s=all&q=";
+					searchbuttonelement.value = "Search IMDB";
+					searchPlaceholderElement.style.backgroundImage = "url(faviconimdb.png)";					
+				}			
+			}
+			
+						
+			/* Replace space with + sign, and append URL prefix and search query */
+
+			var searchinputelement = document.getElementById("searchqueryinput");
+			function makeUrlAndSearch(e) {
+				if (!e) {
+					var e = window.event;
+					e.cancelBubble = true;
+				}
+				if (e.stopPropagation) {
+					e.stopPropagation();
+				}
+
+				var regspace = /\s+/g;
+				var searchinputelementvalue = searchinputelement.value;
+				var searchinputsanitized = searchinputelementvalue.replace(regspace, "+");
+				var finalUrl = searchUrlPrefix + searchinputsanitized;
+				window.location.href = finalUrl;
+			}
+
+
+			/* Input Text Field */
+			function keyDownTextField(e) {
+				if (!e) {
+					var e = window.event;
+				}
+				var keyCode = e.keyCode;
+				if(keyCode==13) {
+					makeUrlAndSearch(e);
+				}
+			}
+
+			if (searchinputelement.addEventListener) {
+				searchinputelement.addEventListener("keydown", keyDownTextField, false);
+			}
+			else if (searchinputelement.attachEvent) {
+				searchinputelement.attachEvent("onkeydown", keyDownTextField);
+			}
+		</script>
+
+		<!--Created: 2010 Feb 26-->
+		<!--Revised: 2010 Mar 1, 2, and 3-->
+
+		<!--Final Approach: Use onkeydown. submit and window.location conflict with each other, so am using type button.-->
+		<!--Initially tried POST method because GET method truncates after the question mark in the URL, but some sites don't play well with POST (Google, IMDB), hence not using either-->
+		<!--Using div instead of semantic form tags because of reload behavior instead of redirect when no action attribute-->
+
+		<!--Known limitations: IE6 search engine switcher functionality not available, IE7 button width wide, Mobile Safari touch events not fully compatible with ones used here-->
+
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-299058-9");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+
+	</body>
+</html>
